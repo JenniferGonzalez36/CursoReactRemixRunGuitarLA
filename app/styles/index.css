@@ -1,3 +1,13 @@
+/*
+########  ######## ########    ###    ##     ## ##       ######## 
+##     ## ##       ##         ## ##   ##     ## ##          ##    
+##     ## ##       ##        ##   ##  ##     ## ##          ##    
+##     ## ######   ######   ##     ## ##     ## ##          ##    
+##     ## ##       ##       ######### ##     ## ##          ##    
+##     ## ##       ##       ##     ## ##     ## ##          ##    
+########  ######## ##       ##     ##  #######  ########    ##    
+*/
+
 :root {
     --primary: #e99401;
     --black: #262626;
@@ -34,6 +44,16 @@ main {
   color: var(--primary);
   margin: 5rem 0;
 }
+
+/*
+##     ## ########    ###    ########  ######## ########  
+##     ## ##         ## ##   ##     ## ##       ##     ## 
+##     ## ##        ##   ##  ##     ## ##       ##     ## 
+######### ######   ##     ## ##     ## ######   ########  
+##     ## ##       ######### ##     ## ##       ##   ##   
+##     ## ##       ##     ## ##     ## ##       ##    ##  
+##     ## ######## ##     ## ########  ######## ##     ## 
+*/
 
 .header{
   background-image: linear-gradient(to right, rgb(0 0 0 / .8), rgb(0 0 0 / 0.7)), url(/img/header.jpg);
@@ -81,5 +101,58 @@ main {
 
   .header .navegacion{
     margin-top: 0;
+  }
+}
+
+/*
+########  #######   #######  ######## ######## ########  
+##       ##     ## ##     ##    ##    ##       ##     ## 
+##       ##     ## ##     ##    ##    ##       ##     ## 
+######   ##     ## ##     ##    ##    ######   ########  
+##       ##     ## ##     ##    ##    ##       ##   ##   
+##       ##     ## ##     ##    ##    ##       ##    ##  
+##        #######   #######     ##    ######## ##     ## 
+*/
+
+.footer {
+  background-color: var(--black);
+  padding: 5rem 0;
+  margin-top: 5rem;
+}
+
+.footer .navegacion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer .navegacion a,
+.footer .copyright{
+  color: var(--white);
+  font-size: 2.8rem;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 300ms;
+}
+
+.footer .navegacion a:hover{
+  color: var(--primary);
+}
+
+.footer .copyright{
+  text-align: center;
+  font-size: 2rem;
+  transition: none;
+}
+
+@media (min-width: 768px){
+  .footer .contenido{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer .navegacion{
+    flex-direction: row;
   }
 }
