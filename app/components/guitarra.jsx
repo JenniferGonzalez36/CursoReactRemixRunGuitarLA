@@ -3,9 +3,8 @@ import { Link } from '@remix-run/react';
 
 const Guitarra = ({guitarra}) => {
     const { nombre, descripcion, imagen, precio, url } = guitarra;
-    console.log(imagen)
   return (
-    <div className='gitarra'>
+    <div className='guitarra'>
         <img src={imagen.data.attributes.formats.small.url} alt={`Imagen guitarra ${nombre}`} />
         <div className='contenido'>
             <h3>{nombre}</h3>
