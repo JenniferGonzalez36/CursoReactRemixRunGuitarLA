@@ -5,7 +5,7 @@ import styles from '~/styles/guitarras.css';
 
 export async function loader({params}){
   const { guitarraUrl } = params;
-  let guitarra = await getGuitarra(guitarraUrl);
+  const guitarra = await getGuitarra(guitarraUrl);
   if(guitarra.data.length === 0){
     throw new Response('', {
       status: 404,

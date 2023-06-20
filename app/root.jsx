@@ -78,7 +78,6 @@ function Document({children}){
     )
 }
 
-
 /** Manejo de errores */
 export function ErrorBoundary(){
     const error = useRouteError();
