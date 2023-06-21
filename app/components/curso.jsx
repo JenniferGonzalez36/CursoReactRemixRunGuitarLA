@@ -2,7 +2,6 @@ import React from 'react'
 
 export default function Curso({curso}) {
     const {titulo, contenido, imagen} = curso;
-    console.log(imagen.data.attributes.url);
   return (
     <section className='curso'>
 
