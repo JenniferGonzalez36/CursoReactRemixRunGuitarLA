@@ -21,6 +21,7 @@
     align-items: center;
     padding: 3rem 0;
     border-bottom: 1px solid #cfcfcf;
+    position: relative;
 }
 
 .producto p{
@@ -36,12 +37,22 @@
     border-bottom: none;
 }
 
+.select{
+    all: unset;
+    border: 1px solid #cfcfcf;
+    text-align: center;
+    width: 100%;
+    padding: .5rem;
+    border-radius: 1rem;
+}
+
 .nombre{
     font-weight: 700;
     font-size: 4.2rem;
 }
 
-.precio{
+.producto .precio{
+    margin-top: 2rem;
     font-weight: 700;
     color: var(--primary);
 }
@@ -58,3 +69,15 @@
     top: 3rem;
 }
 
+.btn_eliminar{
+    all: unset;
+    position: absolute;
+    top: 3rem;
+    right: 1rem;
+    cursor: pointer;
+    transition: color 300ms;
+}
+
+.btn_eliminar:hover{
+    color: #ee0000;
+}

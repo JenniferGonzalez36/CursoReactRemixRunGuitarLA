@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
     Meta,
     Links,
@@ -54,8 +54,15 @@ export function links(){
 }
 
 export default function App(){
+    //typeof window !== 'undefined': Solo el lado del cliente tiene el objeto ' window '
+    const carritoLS = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('carrito')) ?? [] : null;
 
-    const [carrito, setCarrito] = useState([]);
+    const [carrito, setCarrito] = useState(carritoLS);
+
+    useEffect(() => {
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+    }, [carrito]);
+
     const agregarCarrito = guitarra => {
         if(carrito.some(guitarraState => guitarraState.id === guitarra.id)){
             const carritoActualizado = carrito.map(guitarraState => {
@@ -67,12 +74,29 @@ export default function App(){
         } else setCarrito([...carrito, guitarra]);
     }
 
+    const actualizarCantidad = guitarra => {
+        const carritoActualizado = carrito.map(guitarraState => {
+            if(guitarraState.id === guitarra.id){
+                guitarraState.cantidad = guitarra.cantidad;
+            }
+            return guitarraState;
+        })
+        setCarrito(carritoActualizado);
+    }
+
+    const eliminarGuitarra = id => {
+        const carritoActualizado = carrito.filter(guitarraState => guitarraState.id !== id);
+        setCarrito(carritoActualizado);
+    }
+
     return(
         <Document>
             <Outlet 
                 context={{
                     agregarCarrito,
-                    carrito
+                    carrito,
+                    actualizarCantidad,
+                    eliminarGuitarra
                 }}
             />
         </Document>
